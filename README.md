@@ -1,12 +1,12 @@
 # Setup
-Clone your lab repository into your ~/ops435/lab1 directory using SSH:
+Clone your lab repository into your ~/ops435/lab2 directory using SSH:
 ```bash
-git clone git@github.com:ops435/lab1-yourgithubusername.git ~/ops435/lab1/
+git clone git@github.com:ops435/lab2-yourgithubusername.git ~/ops435/lab2/
 ```
 
 Clone your lab repository using HTTPS:
 ```bash
-git clone https://github.com/ops435/lab1-yourgithubusername.git ~/ops435/lab1/ # (login required)
+git clone https://github.com/ops435/lab2-yourgithubusername.git ~/ops435/lab2/ # (login required)
 ```
 
 # Submission
