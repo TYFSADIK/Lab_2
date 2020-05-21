@@ -5,11 +5,6 @@ This will download Lab 2 locally, allowing you to work on your scripts and uploa
 ```bash
 git clone git@github.com:ops435/lab2-yourgithubusername.git ~/ops435/lab2/
 ```
-2. Copy your backed-up work into your new GitHub-linked directory:
-```bash
-cp ~/old_ops435/lab2/* ~/ops435/lab2/
-```
-
 # Submission
 1. Run the checking script:
 ```bash
@@ -21,7 +16,7 @@ Before moving on to the next step, make sure you identify any and all errors in 
 
 2. Commit and push (upload) your Python scripts:
 ```bash
-git add lab*
+git add *
 git commit -m "Individual message or note."
 git push
 ```
