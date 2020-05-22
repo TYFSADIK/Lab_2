@@ -1,5 +1,9 @@
 language: python
 python:
   - "3.4"
+notifications:
+  webhooks:
+    - http://matrix.senecacollege.ca/~eric.brauer/hooks
+
 script: 
   - python3 ./CheckLab2.py -v
