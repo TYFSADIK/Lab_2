@@ -11,8 +11,24 @@ git clone git@github.com:ops435/lab2-yourgithubusername.git ~/ops435/lab2/
 cd ~/ops435/lab2/
 pwd #confirm that you are in the right directory
 python3 ./CheckLab2.py -f -v
+
+Redirect the output of CheckLab2.py:
+python3 ./CheckLab2.py -f -v &> laboutput.txt
 ```
 Before moving on to the next step, make sure you identify any and all errors in your scripts.
+
+In addition to the files you started with, your repository should contain the
+following files you have created:
+
+- [ ] lab2a.py
+- [ ] lab2b.py
+- [ ] lab2c.py
+- [ ] lab2d.py
+- [ ] lab2e.py
+- [ ] lab2f.py
+- [ ] lab2g.py
+- [ ] showargs.py
+- [ ] laboutput.txt
 
 2. Commit and push (upload) your Python scripts:
 ```bash
