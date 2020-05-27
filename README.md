@@ -3,7 +3,7 @@ This will download Lab 2 locally, allowing you to work on your scripts and uploa
 
 1. Clone your lab repository into your ~/ops435/lab2 directory using SSH:
 ```bash
-git clone git@github.com:ops435/lab2-yourgithubusername.git ~/ops435/lab2/
+git clone git@github.com:ops435/lab-2-yourgithubusername.git ~/ops435/lab2/
 ```
 # Submission
 1. Run the checking script:
@@ -27,12 +27,11 @@ following files you have created:
 - [ ] lab2e.py
 - [ ] lab2f.py
 - [ ] lab2g.py
-- [ ] showargs.py
 - [ ] laboutput.txt
 
 2. Commit and push (upload) your Python scripts:
 ```bash
-git add *
+git add lab*
 git commit -m "Individual message or note."
 git push
 ```
