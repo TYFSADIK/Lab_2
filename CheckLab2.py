@@ -289,7 +289,7 @@ class lab2e(unittest.TestCase):
         error_output = 'your program does not have a shebang line(HINT: what should the first line contain)'
         self.assertEqual(first_line.strip(), '#!/usr/bin/env python3', msg=error_output)
 
-    @unittest.skipIf(os.getlogin() == 'travis', "disregarding username check")
+    @unittest.skip("disregarding username check")
     def test_3(self):
         """[Lab 2] - [Investigation 3] - [Part 1] - while loop with timer 10 - Test for user id: ./lab2e.py"""
         lab_file = open('./lab2e.py')
@@ -340,7 +340,7 @@ class lab2f(unittest.TestCase):
         error_output = 'your script does not have a correct shebang line (HINT: what should the first line contain)'
         self.assertEqual(first_line.strip(), '#!/usr/bin/env python3', msg=error_output)
 
-    @unittest.skipIf(os.getlogin() == 'travis', "disregarding username check")
+    @unittest.skip("disregarding username check")
     def test_3(self):
         """[Lab 2] - [Investigation 3] - [Part 2] - while loop & sys.argv - Test for user id: ./lab2f.py"""
         lab_file = open('./lab2f.py')
@@ -422,7 +422,7 @@ class lab2g(unittest.TestCase):
         error_output = 'your script does not have a correct shebang line (HINT: what should the first line contain)'
         self.assertEqual(first_line.strip(), '#!/usr/bin/env python3', msg=error_output)
  
-    @unittest.skipIf(os.getlogin() == 'travis', "disregarding username check")
+    @unittest.skip( "disregarding username check")
     def test_3(self):
         """[Lab 2] - [Investigation 3] - [Part 3] - while loops, sys.argv & if - Test for user id: ./lab2g.py"""
         lab_file = open('./lab2g.py')
