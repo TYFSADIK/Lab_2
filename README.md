@@ -1,14 +1,14 @@
 # Setup
 This will download Lab 2 locally, allowing you to work on your scripts and upload (push) them back up to GitHub.
 
-1. Clone your lab repository into your ~/ops435/lab2 directory using SSH:
+1. Clone your lab repository into your ~/ops445/lab2 directory using SSH:
 ```bash
-git clone git@github.com:ops435/lab-2-yourgithubusername.git ~/ops435/lab2/
+git clone git@github.com:ops445/lab-2-yourgithubusername.git ~/ops445/lab2/
 ```
 # Submission
 1. Run the checking script:
 ```bash
-cd ~/ops435/lab2/
+cd ~/ops445/lab2/
 pwd #confirm that you are in the right directory
 python3 ./CheckLab2.py -f -v
 
