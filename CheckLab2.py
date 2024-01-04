@@ -289,21 +289,6 @@ class lab2e(unittest.TestCase):
         error_output = 'your program does not have a shebang line(HINT: what should the first line contain)'
         self.assertEqual(first_line.strip(), '#!/usr/bin/env python3', msg=error_output)
 
-    @unittest.skip("disregarding username check")
-    def test_3(self):
-        """[Lab 2] - [Investigation 3] - [Part 1] - while loop with timer 10 - Test for user id: ./lab2e.py"""
-        lab_file = open('./lab2e.py')
-        all_lines = lab_file.readlines()
-        lab_file.close()
-        author_id = "not set"
-        error_output = "Author ID not set in your script"
-        for each_line in all_lines:
-            if 'Author ID:' in each_line:
-                author_id = each_line.strip().split(":")[1].replace(' ','')
-                error_output = "Author ID does not match user name running the CheckLab2 script"
-        user_id = os.getlogin()
-        self.assertEqual(author_id, user_id, msg=error_output)
-
     def test_4(self):
         """[Lab 2] - [Investigation 3] - [Part 1] - while loop with timer 10 - Test for output: ./lab2e.py"""
         # Run students program
@@ -339,21 +324,6 @@ class lab2f(unittest.TestCase):
         lab_file.close()
         error_output = 'your script does not have a correct shebang line (HINT: what should the first line contain)'
         self.assertEqual(first_line.strip(), '#!/usr/bin/env python3', msg=error_output)
-
-    @unittest.skip("disregarding username check")
-    def test_3(self):
-        """[Lab 2] - [Investigation 3] - [Part 2] - while loop & sys.argv - Test for user id: ./lab2f.py"""
-        lab_file = open('./lab2f.py')
-        all_lines = lab_file.readlines()
-        lab_file.close()
-        author_id = "not set"
-        error_output = "Author ID not set in your script"
-        for each_line in all_lines:
-            if 'Author ID:' in each_line:
-                author_id = each_line.strip().split(":")[1].replace(' ','')
-                error_output = "Author ID does not match user name running the CheckLab2 script"
-        user_id = os.getlogin()
-        self.assertEqual(author_id, user_id, msg=error_output)
 
     def test_4(self):
         """[Lab 2] - [Investigation 3] - [Part 2] - while loops & sys.argv - Test for errors: ./lab2f.py 10"""
@@ -422,21 +392,6 @@ class lab2g(unittest.TestCase):
         error_output = 'your script does not have a correct shebang line (HINT: what should the first line contain)'
         self.assertEqual(first_line.strip(), '#!/usr/bin/env python3', msg=error_output)
  
-    @unittest.skip( "disregarding username check")
-    def test_3(self):
-        """[Lab 2] - [Investigation 3] - [Part 3] - while loops, sys.argv & if - Test for user id: ./lab2g.py"""
-        lab_file = open('./lab2g.py')
-        all_lines = lab_file.readlines()
-        lab_file.close()
-        author_id = "not set"
-        error_output = "Author ID not set in your script"
-        for each_line in all_lines:
-            if 'Author ID:' in each_line:
-                author_id = each_line.strip().split(":")[1].replace(' ','')
-                error_output = "Author ID does not match user name running the CheckLab2 script"
-        user_id = os.getlogin()
-        self.assertEqual(author_id, user_id, msg=error_output)
-   
     def test_4(self):
         """[Lab 2] - [Investigation 3] - [Part 3] - while loops, sys.argv & if - Test for errors: ./lab2g.py 5"""
         # Run students program
