@@ -47,7 +47,7 @@ class lab2a(unittest.TestCase):
     def test_1(self):
         """[Lab 2] - [Investigation 1] - [Part 1] - variables & printing - Test for errors running: ./lab2a.py"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2a.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2a.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -65,7 +65,7 @@ class lab2a(unittest.TestCase):
     def test_3(self):
         """[Lab 2] - [Investigation 1] - [Part 1] - variables & printing - Test for correct output: ./lab2a.py"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2a.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2a.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, _ = p.communicate()
         # Fail test if output is different from expected_output
         expected_output = b'Hi Jon, you are 20 years old.\n'
@@ -84,7 +84,7 @@ class lab2b(unittest.TestCase):
     def test_1(self):
         """[Lab 2] - [Investigation 1] - [Part 1] - using input() - Test for errors with sending input "Jon" "20": ./lab2b.py"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2b.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2b.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate(input=b'Jon\n20\n')
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -102,7 +102,7 @@ class lab2b(unittest.TestCase):
     def test_3(self):
         """[Lab 2] - [Investigation 1] - [Part 1] - using input() - Test output with sending input "Jon" "20": ./lab2b.py"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2b.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2b.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate(input=b'Jon\n20\n')
         # Fail test if output is different from expected_output
         expected_output = b'Name: Age: Hi Jon, you are 20 years old.\n'
@@ -112,7 +112,7 @@ class lab2b(unittest.TestCase):
     def test_4(self):
         """[Lab 2] - [Investigation 1] - [Part 1] - using input() - Test output with sending input "Jen" "25": ./lab2b.py"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2b.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2b.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate(input=b'Jen\n25\n')
         # Fail test if output is different from expected_output
         expected_output = b'Name: Age: Hi Jen, you are 25 years old.\n'
@@ -131,7 +131,7 @@ class lab2c(unittest.TestCase):
     def test_1(self):
         """[Lab 2] - [Investigation 1] - [Part 2] - command line arguments - Test for errors with 2 args: ./lab2c.py Jon 20"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2c.py', 'Jon', '20' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2c.py', 'Jon', '20' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -149,7 +149,7 @@ class lab2c(unittest.TestCase):
     def test_3(self):
         """[Lab 2] - [Investigation 1] - [Part 2] - command line arguments - Test output for: ./lab2c.py Jon 20"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2c.py', 'Jon', '20' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2c.py', 'Jon', '20' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, _ = p.communicate()
         # Fail test if output is different from expected_output
         expected_output = b'Hi Jon, you are 20 years old.\n'
@@ -159,7 +159,7 @@ class lab2c(unittest.TestCase):
     def test_4(self):
         """[Lab 2] - [Investigation 1] - [Part 2] - command line arguments - Test output for: ./lab2c.py Jen 25"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2c.py', 'Jen', '25' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2c.py', 'Jen', '25' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, _ = p.communicate()
         # Fail test if output is different from expected_output
         expected_output = b'Hi Jen, you are 25 years old.\n'
@@ -178,7 +178,7 @@ class lab2d(unittest.TestCase):
     def test_1(self):
         """[Lab 2] - [Investigation 2] - [Part 1] - sys.argv and if - Test for errors with 0 args: ./lab2d.py"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2d.py' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2d.py' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -196,7 +196,7 @@ class lab2d(unittest.TestCase):
     def test_3(self):
         """[Lab 2] - [Investigation 2] - [Part 1] - sys.argv and if - Test for errors: ./lab2d.py Jon"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2d.py', 'Jon' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2d.py', 'Jon' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -206,7 +206,7 @@ class lab2d(unittest.TestCase):
     def test_4(self):
         """[Lab 2] - [Investigation 2] - [Part 1] - sys.argv and if - Test for errors: ./lab2d.py Jon 20"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2d.py', 'Jon', '20' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2d.py', 'Jon', '20' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -216,7 +216,7 @@ class lab2d(unittest.TestCase):
     def test_5(self):
         """[Lab 2] - [Investigation 2] - [Part 1] - sys.argv and if - Test for errors: ./lab2d.py Jon 20 More"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2d.py', 'Jon', '20', 'More' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2d.py', 'Jon', '20', 'More' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -226,7 +226,7 @@ class lab2d(unittest.TestCase):
     def test_6(self):
         """[Lab 2] - [Investigation 2] - [Part 1] - sys.argv and if - Test output with 0 args: ./lab2d.py"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2d.py' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2d.py' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if output is different from expected_output
         expected_output = b'Usage: ./lab2d.py name age\n'
@@ -236,7 +236,7 @@ class lab2d(unittest.TestCase):
     def test_7(self):
         """[Lab 2] - [Investigation 2] - [Part 1] - sys.argv and if - Test output with 1 args: ./lab2d.py Jon"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2d.py', 'Jon' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2d.py', 'Jon' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if output is different from expected_output
         expected_output = b'Usage: ./lab2d.py name age\n'
@@ -246,7 +246,7 @@ class lab2d(unittest.TestCase):
     def test_8(self):
         """[Lab 2] - [Investigation 2] - [Part 1] - sys.argv and if - Test output with 2 args: ./lab2d.py Jon 20"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2d.py', 'Jon', '20' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2d.py', 'Jon', '20' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if output is different from expected_output
         expected_output = b'Hi Jon, you are 20 years old.\n'
@@ -256,7 +256,7 @@ class lab2d(unittest.TestCase):
     def test_9(self):
         """[Lab 2] - [Investigation 2] - [Part 1] - sys.argv and if - Test output with 3 args: ./lab2d.py Jon 20 More"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2d.py', 'Jon', '20', 'More' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2d.py', 'Jon', '20', 'More' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if output is different from expected_output
         expected_output = b'Usage: ./lab2d.py name age\n'
@@ -274,7 +274,7 @@ class lab2e(unittest.TestCase):
     def test_1(self):
         """[Lab 2] - [Investigation 3] - [Part 1] - while loop with timer 10 - Test for errors: ./lab2e.py"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2e.py' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2e.py' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -292,7 +292,7 @@ class lab2e(unittest.TestCase):
     def test_4(self):
         """[Lab 2] - [Investigation 3] - [Part 1] - while loop with timer 10 - Test for output: ./lab2e.py"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2e.py' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2e.py' ], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if output is different from expected_output
         expected_output = b'10\n9\n8\n7\n6\n5\n4\n3\n2\n1\nblast off!\n'
@@ -310,7 +310,7 @@ class lab2f(unittest.TestCase):
     def test_1(self):
         """[Lab 2] - [Investigation 3] - [Part 2] - while loops & sys.argv - Test for errors with with 0 arguments): ./lab2f.py"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2f.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2f.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -328,7 +328,7 @@ class lab2f(unittest.TestCase):
     def test_4(self):
         """[Lab 2] - [Investigation 3] - [Part 2] - while loops & sys.argv - Test for errors: ./lab2f.py 10"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2f.py', '10'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2f.py', '10'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -338,7 +338,7 @@ class lab2f(unittest.TestCase):
     def test_5(self):
         """[Lab 2] - [Investigation 3] - [Part 2] - while loops & sys.argv - Test for errors: ./lab2f.py 5"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2f.py', '5'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2f.py', '5'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -348,7 +348,7 @@ class lab2f(unittest.TestCase):
     def test_6(self):
         """[Lab 2] - [Investigation 3] - [Part 2] - while loops & sys.argv - Test output with: ./lab2f.py 10"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2f.py', '10'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2f.py', '10'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if output is different from expected_output
         expected_output = b'10\n9\n8\n7\n6\n5\n4\n3\n2\n1\nblast off!\n'
@@ -358,7 +358,7 @@ class lab2f(unittest.TestCase):
     def test_7(self):
         """[Lab 2] - [Investigation 3] - [Part 2] - while loops & sys.argv - Test output with: ./lab2f.py 5"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2f.py', '5'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2f.py', '5'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if output is different from expected_output
         expected_output = b'5\n4\n3\n2\n1\nblast off!\n'
@@ -377,7 +377,7 @@ class lab2g(unittest.TestCase):
     def test_1(self):
         """[Lab 2] - [Investigation 3] - [Part 3] - while loops, sys.argv & if - Test for errors: ./lab2g.py"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2g.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2g.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -395,7 +395,7 @@ class lab2g(unittest.TestCase):
     def test_4(self):
         """[Lab 2] - [Investigation 3] - [Part 3] - while loops, sys.argv & if - Test for errors: ./lab2g.py 5"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2g.py', '5'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2g.py', '5'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -405,7 +405,7 @@ class lab2g(unittest.TestCase):
     def test_5(self):
         """[Lab 2] - [Investigation 3] - [Part 3] - while loops, sys.argv & if - Test for errors: ./lab2g.py 10"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2g.py', '10'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2g.py', '10'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -415,7 +415,7 @@ class lab2g(unittest.TestCase):
     def test_6(self):
         """[Lab 2] - [Investigation 3] - [Part 3] - while loops, sys.argv & if - Test output with no arguments: ./lab2g.py"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2g.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2g.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if output is different from expected_output
         expected_output = b'3\n2\n1\nblast off!\n'
@@ -425,7 +425,7 @@ class lab2g(unittest.TestCase):
     def test_7(self):
         """[Lab 2] - [Investigation 3] - [Part 3] - while loops, sys.argv & if - Test output with: ./lab2g.py 5"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2g.py', '5'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2g.py', '5'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if output is different from expected_output
         expected_output = b'5\n4\n3\n2\n1\nblast off!\n'
@@ -435,7 +435,7 @@ class lab2g(unittest.TestCase):
     def test_8(self):
         """[Lab 2] - [Investigation 3] - [Part 3] - while loops, sys.argv & if - Test output with: ./lab2g.py 10"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab2g.py', '10'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab2g.py', '10'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if output is different from expected_output
         expected_output = b'10\n9\n8\n7\n6\n5\n4\n3\n2\n1\nblast off!\n'
@@ -484,13 +484,14 @@ def CheckForUpdates():
         print('Skipping updates...')
         return
 
+
 def displayReportHeader():
-    report_heading = 'OPS435 Lab Report - System Information for running '+sys.argv[0]
+    report_heading = 'OPS445 Lab Report - System Information for running '+sys.argv[0]
     print(report_heading)
     print(len(report_heading) * '=')
-    print('    User login name:', os.getlogin())
+    import getpass
+    print('    User login name:', getpass.getuser())
     print('    Linux system name:', socket.gethostname())
-    print('    Linux system version:',os.popen('cat /etc/redhat-release').read().strip())
     print('    Python executable:',sys.executable)
     print('    Python version: ',sys.version_info.major,sys.version_info.minor,sys.version_info.micro,sep='')
     print('    OS Platform:',sys.platform)
