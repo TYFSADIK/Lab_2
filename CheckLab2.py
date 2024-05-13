@@ -442,6 +442,19 @@ class lab2g(unittest.TestCase):
         error_output = 'wrong output(HINT: should loop 10 times)'
         self.assertEqual(stdout, expected_output, msg=error_output)
 
+class lab2out(unittest.TestCase):
+    """If lab2 output exists, verify the git email"""
+    
+    def test_0(self):
+        """[Lab 2 Output and Email Verification]"""
+        error_output = 'Make sure you are using your myseneca email address for git. Hint: run git config --global user.email "yoursenecaid@myseneca.ca" in your terminal.'
+        if os.path.exists('./laboutput.txt'):
+            with open('./laboutput.txt') as f:
+                output = f.read()
+            self.assertIn('@myseneca.ca', output, msg=error_output)
+        else:
+            assert True
+
 def ChecksumLatest(url=None):
     dat = ''
     with urllib.request.urlopen(url) as response:
@@ -484,6 +497,13 @@ def CheckForUpdates():
         print('Skipping updates...')
         return
 
+def github_email():
+    cmd = 'git config --get user.email'
+    try:
+        out = os.popen(cmd).read().strip()
+    except:
+        out = 'none found'
+    return out
 
 def displayReportHeader():
     report_heading = 'OPS445 Lab Report - System Information for running '+sys.argv[0]
@@ -491,9 +511,10 @@ def displayReportHeader():
     print(len(report_heading) * '=')
     import getpass
     print('    User login name:', getpass.getuser())
+    print('    Git Email:', github_email())
     print('    Linux system name:', socket.gethostname())
     print('    Python executable:',sys.executable)
-    print('    Python version: ',sys.version_info.major,sys.version_info.minor,sys.version_info.micro,sep='')
+    print('    Python version: ',sys.version)
     print('    OS Platform:',sys.platform)
     print('    Working Directory:',os.getcwd())
     print('    Start at:',time.asctime())
